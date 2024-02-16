@@ -22,10 +22,10 @@ rm -rf wp-includes
 rm -rf wp-admin
 rm *.php
 wget wordpress.org/latest.zip
-unzip latest.zip
+unzip -q latest.zip  #q = quiet
 cp -rv wordpress/* .
 rm latest.zip
-rm -rf wordpress
+rm -rf wordpress # delete extracted wordpress folder
 echo -e "\nAdmin Users <7d:\n"
 wp user list --roles=administrator
 echo -e "\nTHEME CHANGES <7d:\n"
