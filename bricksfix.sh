@@ -26,10 +26,12 @@ unzip latest.zip
 cp -rv wordpress/* .
 rm latest.zip
 rm -rf wordpress
-echo -e "\r\rTHEME CHANGES <7d:\r\r"
+echo -e "\nAdmin Users <7d:\n"
+wp user list --roles=administrator
+echo -e "\nTHEME CHANGES <7d:\n"
 find ./wp-content/themes/ -type f -mtime -7
 #ls -l wp-content/themes
-echo -e "\r\rPLUGIN CHANGES <7d:\r\r"
+echo -e "\nPLUGIN CHANGES <7d:\n"
 find ./wp-content/plugins/ -type f -mtime -7
 #ls -l wp-content/plugins
 wp plugin update --all && wp theme update --all && wp core update && wp core verify-checksums
