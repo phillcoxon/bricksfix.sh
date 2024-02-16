@@ -1,5 +1,10 @@
 #!/bin/sh
 
+echo -e "Running bricksfix.sh at $(date) from https://github.com/phillcoxon/bricksfix.sh/edit/main/bricksfix.sh"
+echo -e "Run again with:"
+echo -e "curl -sSL  https://raw.githubusercontent.com/phillcoxon/bricksfix.sh/main/bricksfix.sh | bash | tee bricksfix.log"
+echo -e "\n\n"
+
 # Check current user
 current_user=$(whoami)
 
@@ -19,7 +24,9 @@ else
 fi
 
 # Let's verify checksums to look for low hanging signs of additional files
+echo -e "\n\nChecking CORE checksums before upates"
 wp core verify-checksums
+echo -e "\n\n"
 
 rm -rf wp-includes
 rm -rf wp-admin
