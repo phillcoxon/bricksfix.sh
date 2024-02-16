@@ -23,7 +23,7 @@ rm -rf wp-admin
 rm *.php
 wget wordpress.org/latest.zip
 unzip -q latest.zip  #q = quiet
-cp -rv wordpress/* .
+cp -r wordpress/* .
 rm latest.zip
 rm -rf wordpress # delete extracted wordpress folder
 echo -e "\nAdmin Users <7d:\n"
