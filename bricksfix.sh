@@ -18,6 +18,9 @@ else
     exit
 fi
 
+# Let's verify checksums to look for low hanging signs of additional files
+wp core verify-checksums
+
 rm -rf wp-includes
 rm -rf wp-admin
 rm *.php
